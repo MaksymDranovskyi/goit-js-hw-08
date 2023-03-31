@@ -19,6 +19,10 @@ function onSubmit(event) {
   event.preventDefault();
   console.log({ email: email.value, message: message.value });
 
+  if(email.value === "" || message.value === "") {
+    return alert("Будь ласка, заповніть усі поля")
+  }
+
   localStorage.removeItem(STORAGE_KEY);
   event.currentTarget.reset();
   formData = {};
